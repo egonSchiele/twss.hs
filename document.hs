@@ -17,7 +17,6 @@ cleanDocument doc = (cleanSpaces . DU.strip . U.lowercase . stripPunctuation) do
 getNgrams doc = words doc
 
 -- assuming ngramSize = 1 and countNgramOnce = undefined = false
-
 -- [(word, freq)]
 getNgramFrequency doc = U.counts $ getNgrams $ cleanDocument doc
 
@@ -27,18 +26,11 @@ getNgramFrequencies docs = (frequencies_hash, sum $ M.elems frequencies_hash)
     frequencies = map getNgramFrequency docs
     frequencies_hash = foldl (\acc doc_freq -> U.merge acc (M.fromList doc_freq) (+)) M.empty frequencies
     
-
-s = "hello hello there adit"
-s2 = "hello there whatup"
-gnf1 = getNgramFrequency
-gnf = getNgramFrequencies
-
 getNgramBayesianProbabilities pos_docs neg_docs = M.mapWithKey (\ngram _ -> ((posFreq M.! ngram) / ((posFreq M.! ngram) + (negFreq M.! ngram)))) usable_ngrams
     where
     posFreq = fst $ getNgramFrequencies pos_docs
     negFreq = fst $ getNgramFrequencies neg_docs
     usable_ngrams = M.intersection posFreq negFreq
-
 
 getNgramProbabilities docs = M.map ( / total_ngrams) freq
     where (freq, total_ngrams) = getNgramFrequencies docs
