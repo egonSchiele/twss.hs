@@ -1,4 +1,4 @@
-module PositivePrompts where
+module Data.PositivePrompts where
 prompts = [
       "Can we finish this orally, my hand is starting to hurt."
     , "it's sooo hard! I can't fit it in, it's just too small."
@@ -1951,5 +1951,4 @@ prompts = [
     , "ha you cant fit it in"
     , "but then it'd be all dry and you couldn't spread it!"
     , "you look exhausted how many of those did you take?"
-    , "Just getting it in correctly is half the battle!"
-]
+    , "Just getting it in correctly is half the battle!" ]

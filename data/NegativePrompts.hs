@@ -1,4 +1,4 @@
-module NegativePrompts where
+module Data.NegativePrompts where
 prompts = [
       "had drunk sex with a girl that I barely know"
     , "husband dropped me off at work"
@@ -1533,7 +1533,7 @@ prompts = [
     , "peed at a urinal"
     , "caught my dad eating the dog treats I'd bought for my dog"
     , "was going down on my girlfriend"
-    , "a never-ending dinner with really boring friends, I faked being tired and told my husband â€œLetâ€™s go honey, we have a long way to drive homeâ€"
+    , "a never-ending dinner with really boring friends, I faked being tired and told my husband â€œLetâ€™s go honey, we have a long way to drive home"
     , "girlfriend woke me up in the middle of the night to have sex"
     , "went outside a friend's house to find that my car had been saran wrapped"
     , "was having sex with a girl I really like for the first time"
@@ -1999,5 +1999,4 @@ prompts = [
     , "saw a girl on the subway that I knew so I started waving frantically."
     , "was in the elevator with my female coworker and a very attractive teen in front of us."
     , "my parents and I were out, my older brother thought it would be funny to play porn on my computer."
-    , "was cashiering at a grocery store when an elderly woman came through my line buying prune juice."
-]
+    , "was cashiering at a grocery store when an elderly woman came through my line buying prune juice." ]
