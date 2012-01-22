@@ -7,7 +7,7 @@
 	main = do
 		input <- getLine
 		putStrLn $ show $ isTwss input
-		putStrLn $ show $ isTwssProbability input
+		putStrLn $ show $ isTwssProbability input -- show the probability of this being a twss
 
 ## Demo
 
@@ -17,7 +17,7 @@ Use `demo.hs` to watch it in action:
 
 
 ## Important Note!
-Thinking of using the `-XNoMonomorphismRestriction` flag with this code? *BAD IDEA*, it will grind to a halt. Please don't do it. [See here if you don't know what the flag does.](http://stackoverflow.com/questions/4575040/what-is-xnomonomorphismrestriction).
+Thinking of using the `-XNoMonomorphismRestriction` flag with this code? *BAD IDEA*, it will grind to a halt. Please don't do it. [See here if you don't know what the flag does](http://stackoverflow.com/questions/4575040/what-is-xnomonomorphismrestriction).
 
 
 ## Credits
