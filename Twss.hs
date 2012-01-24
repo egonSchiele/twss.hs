@@ -1,21 +1,22 @@
 {-# LANGUAGE FlexibleContexts #-}
-module Twss where
+module Twss( TrainingData
+           , readTrainingData
+           , isTwss
+           , isTwssProbability )
+  where
 import qualified Classify
-import qualified Data.PositivePrompts as Pos
-import qualified Data.NegativePrompts as Neg
+import Control.Monad
 
--- constants
-threshold :: Double
+threshold :: Floating t => t
 threshold = 0.5
 
-posTrainingData :: [[Char]]
-posTrainingData = Pos.prompts
+type TrainingData = [String]
 
-negTrainingData :: [[Char]]
-negTrainingData = Neg.prompts
+readTrainingData :: FilePath -> IO TrainingData
+readTrainingData = liftM lines . readFile
 
-isTwssProbability :: Floating (Double -> t) => String -> t
-isTwssProbability prompt = Classify.getTwssProbability prompt posTrainingData negTrainingData threshold
+isTwssProbability :: Floating t => [String] -> [String] -> String -> t
+isTwssProbability pos neg prompt = Classify.getTwssProbability pos neg prompt
 
-isTwss :: String -> Bool
-isTwss prompt = Classify.isTwss prompt posTrainingData negTrainingData threshold
+isTwss :: TrainingData -> TrainingData -> String -> Bool
+isTwss pos neg prompt = Classify.isTwss pos neg prompt (threshold :: Double)
