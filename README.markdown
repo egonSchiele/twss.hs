@@ -5,15 +5,17 @@
 	import Twss
 
 	main = do
+	    pos <- readTrainingData "positive"
+	    neg <- readTrainingData "negative"
 		input <- getLine
-		putStrLn $ show $ isTwss input
-		putStrLn $ show $ isTwssProbability input -- show the probability of this being a twss
+		putStrLn $ show $ isTwss pos neg input
+		putStrLn $ show $ isTwssProbability pos neg input -- show the probability of this being a twss
 
-## Demo
+## Example
 
-Use `demo.hs` to watch it in action:
+Use `Main.hs` to watch it in action:
 
-	runhaskell demo.hs
+	runhaskell Main.hs <string>
 
 
 ## Important Note!
