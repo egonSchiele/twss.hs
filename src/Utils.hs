@@ -1,7 +1,4 @@
-module Utils (
-               lowercase
-             , counts
-             ) where
+module Utils where
 
 import qualified Data.List as L
 import qualified Data.Char as C
@@ -16,3 +13,16 @@ counts l = map (\x -> (x, count l x)) (L.nub l)
 
 lowercase :: String -> String
 lowercase = map C.toLower
+
+strip :: String -> String
+strip = lstrip . rstrip
+
+-- | Same as 'strip', but applies only to the left side of the string.
+lstrip [] = []
+lstrip (x:xs)
+    | elem x " \t\r\n" = lstrip xs
+    | otherwise = x:xs
+
+-- | Same as 'strip', but applies only to the right side of the string.
+rstrip :: String -> String
+rstrip = reverse . lstrip . reverse

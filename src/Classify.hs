@@ -1,6 +1,4 @@
-module Classify ( getTwssProbability
-                , isTwss)
-  where
+module Classify where
 import qualified Document as D
 import qualified Data.Map as M
 

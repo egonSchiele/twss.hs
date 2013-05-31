@@ -10,4 +10,4 @@ main = do args <- getArgs
                       pos <- readTrainingData "positive"
                       neg <- readTrainingData "negative"
                       putStrLn $ show $ isTwss pos neg input
-            _ -> do error "usage: runhaskell Main.hs <string>"
+            _ -> error "usage: runhaskell Main.hs <string>"

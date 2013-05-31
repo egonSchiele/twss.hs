@@ -1,0 +1,21 @@
+name:                twss
+synopsis:            A That's What She Said classifier for Haskell.
+homepage:            https://github.com/egonSchiele/twss.hs
+license:             MIT
+license-file:        LICENSE
+author:              Aditya Bhargava
+maintainer:          bluemangroupie@gmail.com
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.8
+version:             0.1.0.0
+
+library
+  exposed-modules:     Classify, Document, Main, Twss, Utils
+  build-depends:       base ==4.5.*, containers ==0.4.*, regex-compat ==0.95.*
+  hs-source-dirs:      src
+
+executable twss
+  build-depends:       base ==4.5.*, containers ==0.4.*, regex-compat ==0.95.*
+  hs-source-dirs:      src
+  main-is: Main.hs

@@ -15,7 +15,7 @@ type TrainingData = [String]
 readTrainingData :: FilePath -> IO TrainingData
 readTrainingData = liftM lines . readFile
 
-isTwssProbability :: Floating t => [String] -> [String] -> String -> t
+isTwssProbability :: Floating t => TrainingData -> TrainingData -> String -> t
 isTwssProbability pos neg prompt = Classify.getTwssProbability pos neg prompt
 
 isTwss :: TrainingData -> TrainingData -> String -> Bool
